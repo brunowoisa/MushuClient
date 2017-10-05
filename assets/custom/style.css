@@ -1,0 +1,22 @@
+.select2-container{
+  z-index: 1;
+}
+
+label{
+  margin-top: 3px; 
+  margin-bottom: 0px;
+}
+
+.form-buttons{
+  margin-top: 18px; 
+  text-align: right;
+}
+
+.btn.btn-transparent {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.btn.btn-transparent.btn-top{
+  margin-left: 10px;
+}
