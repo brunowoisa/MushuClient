@@ -1,7 +1,7 @@
 <?php $this->load->view('include/top'); ?>
   <div class="panel">
     <div class="panel-header">
-      <h3><i class="fa fa-users"></i>Clientes - Cadastro de Autorizados</h3>
+      <h3><i class="fa fa-users"></i>Cadastro de Autorizados</h3>
     </div>
     <div class="panel-content">
       <form action="<?php echo $url_form; ?>" method="POST">
@@ -15,21 +15,6 @@
 
             <div class="tab-pane fade active in" id="geral">
               
-              <div class="row">
-                <div class="col-sm-2">
-                  <label>Código</label>
-                  <input class="form-control bg-aero" type="text" value="<?php echo set_form_value($editar,$form,'id'); ?>" disabled placeholder="Automático">
-                </div>
-                <div class="col-sm-10">
-                  <label>Cliente</label>
-                  <select class="form-control <?php echo form_status('id_cliente'); ?>" name="id_cliente">
-                    <option value="">--Selecione--</option>
-                    <?php foreach ($clientes as $key): ?>
-                      <option value="<?php echo $key->id; ?>" <?php echo set_form_select($editar,$form,'id_cliente', $key->id); ?>><?php echo $key->nome; ?></option>
-                    <?php endforeach ?>
-                  </select>
-                </div>
-              </div>
               <div class="row">
                 <div class="col-sm-4">
                   <label>CPF</label>

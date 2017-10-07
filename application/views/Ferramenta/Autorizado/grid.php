@@ -1,14 +1,11 @@
 <?php $this->load->view('include/top'); ?>
   <div class="panel">
     <div class="panel-header">
-      <h3><i class="fa fa-users"></i>Clientes - Autorizados</h3>
+      <h3><i class="fa fa-users"></i>Autorizados</h3>
     </div>
-
-
 
     <div class="panel-content">
 
-      <?php $this->load->view('include/filtro_2_campos') ?>
       <div class="row">
         <div class="col-sm-12">
 
@@ -17,19 +14,19 @@
               <tr>
                 <th>Ações</th>
                 <th>Nome</th>
-                <th>Cliente</th>
-                <th>Usa o Sistema</th>
+                <th style="text-align: center;">Usa o Sistema</th>
+                <th style="text-align: center;">Ativo</th>
               </tr>
             </thead>
             <tbody>
               <?php foreach ($grid as $key): ?>
                 <tr>
                   <td>
-                    <a href="<?php echo base_url(); ?>cadastros/Cliente_autorizado/editar/<?php echo $key->id; ?>/" class="btn btn-success btn-transparent btn-square btn-sm"><i class="fa fa-edit"></i></a>
+                    <a href="<?php echo base_url(); ?>Ferramenta/Autorizado/editar/<?php echo $key->id; ?>/" class="btn btn-success btn-transparent btn-square btn-sm"><i class="fa fa-edit"></i></a>
                   </td>
                   <td><?php echo $key->nome; ?></td>
-                  <td><?php echo $key->nome_cliente; ?></td>
-                  <td><?php echo ($key->usa_sistema == 'S')?'Sim':'Não'; ?></td>
+                  <td style="text-align: center;"><?php echo ($key->usa_sistema == 'S')?'<i class="fa fa-check-circle c-green"></i> Sim':'<i class="fa fa-times-circle c-red"></i> Não'; ?></td>
+                  <td style="text-align: center;"><?php echo ($key->ativo == 'S')?'<i class="fa fa-check-circle c-green"></i> Sim':'<i class="fa fa-times-circle c-red"></i> Não'; ?></td>
                 </tr>
               <?php endforeach ?>
             </tbody>

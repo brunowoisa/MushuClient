@@ -7,8 +7,8 @@
     </ul>
   </li> -->
 
-  <li><a href="<?php echo base_url(); ?>Menu/Cadastros"><i class="fa fa-database"></i><span>Autorizados</span></a></li>
-  <li><a href="<?php echo base_url(); ?>Menu/Movimento"><i class="fa fa-shopping-cart"></i><span>Veículos</span></a></li>
-  <li><a href="<?php echo base_url(); ?>Menu/Outros"><i class="fa fa-archive"></i><span>Outros</span></a></li>
+  <li><a href="<?php echo base_url(); ?>Ferramenta/Autorizado"><i class="fa fa-users"></i><span>Autorizados</span></a></li>
+  <li><a href="<?php echo base_url(); ?>Ferramenta/Veiculo"><i class="fa fa-motorcycle"></i><span>Veículos</span></a></li>
+  <li><a href="<?php echo base_url(); ?>Ferramenta/Movimentacao"><i class="fa fa-wrench"></i><span>Movimentação</span></a></li>
 
 </ul>
