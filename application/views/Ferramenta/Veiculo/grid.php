@@ -26,7 +26,7 @@
               <?php foreach ($grid as $key): ?>
                 <tr>
                   <td>
-                    <a href="<?php echo base_url(); ?>cadastros/Cliente_veiculo/editar/<?php echo $key->id; ?>/" class="btn btn-success btn-transparent btn-square btn-sm"><i class="fa fa-edit"></i></a>
+                    <a href="<?php echo base_url(); ?>Ferramenta/Veiculo/editar/<?php echo $key->id; ?>/" class="btn btn-success btn-transparent btn-square btn-sm"><i class="fa fa-edit"></i></a>
                   </td>
                   <td><?php echo formata_placa($key->placa); ?></td>
                   <td><?php echo $key->identificacao; ?></td>

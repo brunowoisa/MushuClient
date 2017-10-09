@@ -1,7 +1,7 @@
 <?php $this->load->view('include/top'); ?>
   <div class="panel">
     <div class="panel-header">
-      <h3><i class="fa fa-star"></i> Movimentação de Convênios</h3>
+      <h3><i class="fa fa-wrench"></i>Movimentação</h3>
     </div>
 
     <div class="panel-content pagination2 table-responsive">
@@ -24,10 +24,9 @@
                   <div class="btn-group">
                     <button type="button" class="btn btn-warning btn-transparent btn-square btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding: 0;"><i class="fa fa-bars"></i></button>
                     <ul class="dropdown-menu" role="menu" style="top: 5px; left: 38px;">
-                      <li><a href="<?php echo base_url(); ?>movimento/Movimentacao_convenio/historico/<?php echo $key->id; ?>/">Histórico</a></li>
-                      <li><a href="<?php echo base_url(); ?>movimento/Movimentacao_convenio/novo/<?php echo $key->id; ?>">Nova Movimentação</a></li>
+                      <li><a href="<?php echo base_url(); ?>Ferramenta/Movimentacao/historico/<?php echo $key->id; ?>/">Histórico</a></li>
                       <?php if ($key->id_ultima_movimentacao != ''): ?>
-                        <li><a href="<?php echo base_url(); ?>movimento/Movimentacao_convenio/editar/<?php echo $key->id_ultima_movimentacao; ?>/">Última Movimentação</a></li>
+                        <li><a href="<?php echo base_url(); ?>Ferramenta/Movimentacao/editar/<?php echo $key->id_ultima_movimentacao; ?>/">Última Movimentação</a></li>
                       <?php endif ?>
                     </ul>
                   </div>
