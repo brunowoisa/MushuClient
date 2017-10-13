@@ -23,15 +23,14 @@ Class autorizado_mod extends CI_Model {
   public function novo($form){
     $data = array(
       'id_cliente' => $this->session->userdata('cliente_autorizado')->id_cliente,
-      'cpf' => limpa_cpf($form->cpf),
       'nome' => $form->nome,
-      'usa_sistema' => $form->usa_sistema,
+      'apelido' => $form->apelido,
+      'usa_sistema' => 'N',
       'data_nascimento' => data_to_date($form->data_nascimento),
       'ativo' => $form->ativo,
-      'email' => $form->email,
       'telefone' => $form->telefone,
       'celular' => $form->celular,
-      'senha' => md5(2727),
+      'senha' => 2727,
     );
     $this->db->insert('cliente_autorizado', $data);
     if($this->db->affected_rows())
@@ -41,9 +40,10 @@ Class autorizado_mod extends CI_Model {
 
   public function editar($form,$id_cliente_autorizado){
     $data = array(
-      'cpf' => limpa_cpf($form->cpf),
       'nome' => $form->nome,
+      'apelido' => $form->apelido,
       'usa_sistema' => $form->usa_sistema,
+      'login' => $form->login,
       'data_nascimento' => data_to_date($form->data_nascimento),
       'ativo' => $form->ativo,
       'email' => $form->email,
@@ -54,6 +54,46 @@ Class autorizado_mod extends CI_Model {
     $this->db->update('cliente_autorizado', $data);
     if($this->db->affected_rows())
       return true;
+    return false;
+  }
+
+  public function editar_perfil($form,$id_cliente_autorizado,$upload){
+    $data = array(
+      'nome' => $form->nome,
+      'apelido' => $form->apelido,
+      'login' => $form->login,
+      'data_nascimento' => data_to_date($form->data_nascimento),
+      'email' => $form->email,
+      'telefone' => $form->telefone,
+      'celular' => $form->celular,
+    );
+    if($upload != null){
+      $data['foto'] = $upload['file_name'];
+    }
+    $this->db->where('id', $id_cliente_autorizado);
+    $this->db->update('cliente_autorizado', $data);
+    if($this->db->affected_rows())
+      return true;
+    return false;
+  }
+
+  public function editar_senha($form,$id_cliente_autorizado){
+    $data = array(
+      'senha' => $form->nova_senha,
+    );
+    $this->db->where('id', $id_cliente_autorizado);
+    $this->db->update('cliente_autorizado', $data);
+    if($this->db->affected_rows())
+      return true;
+    return false;
+  }
+
+  public function consulta_login_disponivel($login){
+    $this->db->where('login', $login);
+    $this->db->from('cliente_autorizado');
+    if ($this->db->count_all_results() == 0) {
+      return true;
+    }
     return false;
   }
 }

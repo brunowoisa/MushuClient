@@ -508,6 +508,7 @@
     <!-- #################################################################################################################### -->
 
     <!-- jquery -->
+    <script src="<?php echo base_url(); ?>assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>
 
@@ -571,6 +572,12 @@
     <script src="<?php echo base_url(); ?>assets/sweetalert/dist/sweetalert.min.js"></script> 
     <!-- IOS Switch -->
     <script src="<?php echo base_url(); ?>assets/global/plugins/switchery/switchery.min.js"></script>
+    <!-- Upload Image & File in dropzone -->
+    <script src="<?php echo base_url(); ?>assets/global/plugins/dropzone/dropzone.min.js"></script>
+    <!-- Select Inputs -->
+    <script src="<?php echo base_url(); ?>assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> 
+    <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+    <script src="<?php echo base_url(); ?>assets/global/js/pages/form_icheck.js"></script>  
 
 
 
@@ -710,7 +717,7 @@
 
 
     <!-- Esse plugin para as mascaras nos campos input esta dando pau no mac, entretanto se comentado, os campos com mascara continuam funcionando. testar no windows. -->
-    <!-- <script src="<?php echo base_url(); ?>assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script> -->
+    <script src="<?php echo base_url(); ?>assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script>
 
   </body>
 </html>

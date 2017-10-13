@@ -12,11 +12,10 @@ Class acesso_mod extends CI_Model {
    * @return int
    */
   public function login($form){
-    $form->cpf = limpa_cpf($form->cpf);
     $this->db->select('*');
     $this->db->from('cliente_autorizado');
-    $this->db->where('cpf', $form->cpf);
-    $this->db->where('senha', md5($form->senha));
+    $this->db->where('login', $form->login);
+    $this->db->where('senha', $form->senha);
     $query = $this->db->get()->result();
     // epre($query);
     // exit();
@@ -59,7 +58,7 @@ Class acesso_mod extends CI_Model {
       $cliente_autorizado = $this->session->userdata('cliente_autorizado');
       $this->db->select('*');
       $this->db->from('cliente_autorizado');
-      $this->db->where('cpf', $cliente_autorizado->cpf);
+      $this->db->where('login', $cliente_autorizado->login);
       $this->db->where('senha', $cliente_autorizado->senha);
       $this->db->where('usa_sistema', 'S');
       $total = count($this->db->get()->result());
@@ -80,7 +79,7 @@ Class acesso_mod extends CI_Model {
       $cliente_autorizado = $this->session->userdata('cliente_autorizado');
       $this->db->select('*');
       $this->db->from('cliente_autorizado');
-      $this->db->where('cpf', $cliente_autorizado->cpf);
+      $this->db->where('login', $cliente_autorizado->login);
       $this->db->where('senha', $cliente_autorizado->senha);
       $this->db->where('usa_sistema', 'S');
       $total = count($this->db->get()->result());
@@ -99,8 +98,8 @@ Class acesso_mod extends CI_Model {
   private function monta_sessao($form){
     $this->db->select('*');
     $this->db->from('cliente_autorizado');
-    $this->db->where('cpf', $form->cpf);
-    $this->db->where('senha', md5($form->senha));
+    $this->db->where('login', $form->login);
+    $this->db->where('senha', $form->senha);
     $cliente_autorizado = current($this->db->get()->result());
     $this->session->set_userdata('cliente_autorizado', $cliente_autorizado);
 

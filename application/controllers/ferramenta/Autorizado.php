@@ -37,10 +37,8 @@ class Autorizado extends CI_Controller {
     if (!empty($form)) {
       $form = (object) $form;
       $this->form_validation->set_rules('nome', 'Nome', 'required');
-      $this->form_validation->set_rules('usa_sistema', 'Usa o Sistema?', 'required');
+      $this->form_validation->set_rules('apelido', 'Apelido', 'required');
       $this->form_validation->set_rules('ativo', 'Ativo', 'required');
-      if($form->usa_sistema == 'S')
-        $this->form_validation->set_rules('cpf', 'CPF', 'required');
       if ($this->form_validation->run() == TRUE){
         $res = $this->Autorizado_mod->novo($form);
         if(!$res){
@@ -70,10 +68,12 @@ class Autorizado extends CI_Controller {
     if (!empty($form)) {
       $form = (object) $form;
       $this->form_validation->set_rules('nome', 'Nome', 'required');
-      $this->form_validation->set_rules('usa_sistema', 'Usa o Sistema?', 'required');
+      $this->form_validation->set_rules('apelido', 'Apelido', 'required');
       $this->form_validation->set_rules('ativo', 'Ativo', 'required');
+      $this->form_validation->set_rules('usa_sistema', 'Usa o Sistema?', 'required');
       if($form->usa_sistema == 'S')
-        $this->form_validation->set_rules('cpf', 'CPF', 'required');
+        $this->form_validation->set_rules('login', 'Login', 'required');
+        $this->form_validation->set_rules('email', 'E-mail', 'required');
       if ($this->form_validation->run() == TRUE){
 
         $res = $this->Autorizado_mod->editar($form,$id_Autorizado);

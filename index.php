@@ -321,5 +321,5 @@ if( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' || $_SERVER['HTTP_HOST
 	require_once BASEPATH.'core/CodeIgniter.php';
 }
 else{
-  header("Location: https://www.idealmotopecas.com/Mushu/");
+  header("Location: https://www.idealmotopecas.com/MushuClient/");
 }

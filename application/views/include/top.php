@@ -39,19 +39,21 @@
               <li class="dropdown" id="user-header">
                 <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 
-
-                <?php
-                if (isset($this->session->userdata('cliente_autorizado')->foto) && is_file('./assets/uploads/_funcionarios/foto/'.$this->session->userdata('funcionario')->foto)): ?>
-                  <img class="img-sm img-circle mCS_img_loaded" src="<?php echo base_url(); ?>assets/uploads/_funcionarios/foto/<?php echo $this->session->userdata('funcionario')->foto; ?>" alt="Foto de Perfil">
-                <?php else: ?>
-                  <img class="img-sm img-circle mCS_img_loaded" src="<?php echo base_url(); ?>assets/images/noprofile.jpg" alt="Sem Foto de Perfil">
-                <?php endif ?>
+                  <?php
+                  if (isset($this->session->userdata('cliente_autorizado')->foto) && is_file('../Mushu/assets/uploads/_clientes/foto/'.$this->session->userdata('cliente_autorizado')->foto)): ?>
+                    <img class="img-sm img-circle mCS_img_loaded" src="<?php echo base_url(); ?>../Mushu/assets/uploads/_clientes/foto/<?php echo $this->session->userdata('cliente_autorizado')->foto; ?>" alt="Foto de Perfil">
+                  <?php else: ?>
+                    <img class="img-sm img-circle mCS_img_loaded" src="<?php echo base_url(); ?>assets/images/noprofile.jpg" alt="Sem Foto de Perfil">
+                  <?php endif ?>
 
                 <span class="username"><?php echo $this->session->userdata('cliente_autorizado')->nome; ?>!</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="#"><i class="icon-user"></i><span>Meu Perfil</span></a>
+                    <a href="<?php echo base_url(); ?>Home/perfil"><i class="icon-user"></i><span>Meu Perfil</span></a>
+                  </li>
+                  <li>
+                    <a href="<?php echo base_url(); ?>Home/senha"><i class="icon-key"></i><span>Alterar Senha</span></a>
                   </li>
                   <li>
                     <a href="<?php echo base_url(); ?>acesso/sair"><i class="icon-logout"></i><span>Sair</span></a>

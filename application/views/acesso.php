@@ -17,7 +17,7 @@
             <i class="user-img icons-faces-users-03"></i>
             <form class="form-signin" role="form" method="POST" action="#">
               <div class="append-icon">
-                <input type="text" data-mask="999.999.999-99" name="cpf" id="name" class="form-control form-white username <?php echo form_status('cpf'); ?>" placeholder="CPF" value="<?php echo set_value('cpf'); ?>">
+                <input type="text" name="login" id="name" class="form-control form-white username <?php echo form_status('login'); ?>" placeholder="Login" value="<?php echo set_value('login'); ?>">
                 <i class="icon-user"></i>
               </div>
               <div class="append-icon m-b-20">

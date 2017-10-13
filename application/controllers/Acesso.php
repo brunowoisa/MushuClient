@@ -13,7 +13,7 @@ class acesso extends CI_Controller {
     $data = array();
     $form = $this->input->post();
     if (!empty($form)) {
-      $this->form_validation->set_rules('cpf', 'CPF', 'required');
+      $this->form_validation->set_rules('login', 'Login', 'required');
       $this->form_validation->set_rules('senha', 'Senha', 'required');
       if ($this->form_validation->run() == TRUE){
         $form = (object) $form;
