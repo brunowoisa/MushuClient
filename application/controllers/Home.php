@@ -104,10 +104,6 @@ class home extends CI_Controller {
         else{
           $data['error'] = "As novas senhas não são iguais.";
         }
-
-
-
-
       }
       else
         $data['form_erros'] = validation_errors();
