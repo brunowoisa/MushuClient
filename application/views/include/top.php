@@ -5,6 +5,7 @@
     <?php include('head.php'); ?>
   </head>
   <!-- BEGIN BODY -->
+  <!-- <body class="sidebar-light fixed-topbar theme-sltl bg-light-dark color-default dashboard"> -->
   <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-primary">
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -28,9 +29,9 @@
           <div class="header-left">
             <div class="topnav">
               <a class="menutoggle" href="#" data-toggle="sidebar-collapsed"><span class="menu__handle"><span>Menu</span></span></a>
-              <!-- <ul class="nav nav-icons">
-                <li><a href="#" class="toggle-sidebar-top"><span class="icon-user-following"></span></a></li>
-              </ul> -->
+              <!-- <ul class="nav nav-icons"> -->
+                <!-- <li><a href="#" class="toggle-sidebar-top"><span class="icon-user-following"></span></a></li> -->
+              <!-- </ul> -->
             </div>
           </div>
           <div class="header-right">
@@ -46,7 +47,7 @@
                     <img class="img-sm img-circle mCS_img_loaded" src="<?php echo base_url(); ?>assets/images/noprofile.jpg" alt="Sem Foto de Perfil">
                   <?php endif ?>
 
-                <span class="username"><?php echo $this->session->userdata('cliente_autorizado')->nome; ?>!</span>
+                <span class="username"><?php echo $this->session->userdata('cliente_autorizado')->nome; ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li>

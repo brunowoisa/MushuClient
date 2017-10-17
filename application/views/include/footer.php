@@ -567,7 +567,7 @@
     <script src="<?php echo base_url(); ?>assets/global/js/plugins.js"></script>
 
     <!-- Main Application Script -->
-    <!-- <script src="<?php echo base_url(); ?>assets/admin/layout4/js/layout.js"></script> -->
+    <script src="<?php echo base_url(); ?>assets/admin/layout4/js/layout.js"></script>
 
     <script src="<?php echo base_url(); ?>assets/global/plugins/bootstrap-loading/lada.min.js"></script>
 
