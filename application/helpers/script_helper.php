@@ -41,15 +41,19 @@ function limpa_placa($placa){
 function limpa_cnpj($cnpj){
   $cnpj = str_replace('.', '', $cnpj);
   $cnpj = str_replace('-', '', $cnpj);
+  $cnpj = str_replace('_', '', $cnpj);
   $cnpj = str_replace('/', '', $cnpj);
   return $cnpj;
 }
 
 function formata_cnpj($cnpj){
-  $cnpj = str_replace('.', '', $cnpj);
-  $cnpj = str_replace('-', '', $cnpj);
-  $a = str_split($cnpj);
-  return $a[0].$a[1].'.'.$a[2].$a[3].$a[4].'.'.$a[5].$a[6].$a[7].'/'.$a[8].$a[9].$a[10].$a[11].'-'.$a[12].$a[13]; 
+  if ($cnpj != '') {
+    $cnpj = str_replace('.', '', $cnpj);
+    $cnpj = str_replace('-', '', $cnpj);
+    $a = str_split($cnpj);
+    return $a[0].$a[1].'.'.$a[2].$a[3].$a[4].'.'.$a[5].$a[6].$a[7].'/'.$a[8].$a[9].$a[10].$a[11].'-'.$a[12].$a[13]; 
+  }
+  return null;
 }
 
 function limpa_cep($cep){
@@ -65,10 +69,13 @@ function formata_cep($cep){
 }
 
 function formata_placa($placa){
-  $placa = str_replace('.', '', $placa);
-  $placa = str_replace('-', '', $placa);
-  $a = str_split($placa);
-  return $a[0].$a[1].$a[2].'-'.$a[3].$a[4].$a[5].$a[6]; 
+  if($placa != ''){
+    $placa = str_replace('.', '', $placa);
+    $placa = str_replace('-', '', $placa);
+    $a = str_split($placa);
+    return $a[0].$a[1].$a[2].'-'.$a[3].$a[4].$a[5].$a[6]; 
+  }
+  return null;
 }
 
 function data_to_date($data){
@@ -152,6 +159,7 @@ function set_form_select($editar,$form,$nome_campo,$option){
 
 function set_form_checkbox($editar,$form,$nome_campo,$value){
   if ($editar) {
+    $nome_campo = str_replace('[]', '', $nome_campo);
     $form = (array)$form;
     $form = (array)$form[$nome_campo];
     if(in_array($value, $form))
@@ -174,7 +182,6 @@ function set_tab_body($tab1,$tab2){
     return 'active in';
   return '';
 }
-
 
 function form_status($field){
   if (validation_errors() == null)
