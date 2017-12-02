@@ -103,19 +103,20 @@
   });
 
   function calcula_total(){
-    var valor_produtos = parseFloat($('#valor_produtos').val().replace(".", "").replace(".", "").replace(",", "."));
+    var valor_produtos = parseFloat($('#valor_produtos').val().replace(" ", "").replace(".", "").replace(".", "").replace(",", "."));
     if(isNaN(valor_produtos)) {
       var valor_produtos = 0;
     }
-    var valor_servicos = parseFloat($('#valor_servicos').val().replace(".", "").replace(".", "").replace(",", "."));
+    var valor_servicos = parseFloat($('#valor_servicos').val().replace(" ", "").replace(".", "").replace(".", "").replace(",", "."));
     if(isNaN(valor_servicos)) {
       var valor_servicos = 0;
     }
-    var valor_iss_retido = parseFloat($('#valor_iss_retido').val().replace(".", "").replace(".", "").replace(",", "."));
+    var valor_iss_retido = parseFloat($('#valor_iss_retido').val().replace(" ", "").replace(".", "").replace(".", "").replace(",", "."));
     if(isNaN(valor_iss_retido)) {
       var valor_iss_retido = 0;
     }
     var total = parseFloat((valor_produtos + valor_servicos) - valor_iss_retido).toFixed(2).replace(".", ",");
-    $('#valor_total').text(total)
+    $('#valor_total').text(total);
+    compara_valores();
   }
 </script>
