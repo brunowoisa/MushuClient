@@ -78,14 +78,16 @@
                 </thead>
                 <tbody>
                   <?php foreach ($veiculos as $veiculo): ?>
-                    <tr>
-                      <td><?php echo $veiculo->identificacao; ?></td>
-                      <td><?php echo formata_placa($veiculo->placa); ?></td>
-                      <td style="text-align: right;">
-                        <span class="pull-left">R$</span>
-                        <?php echo $valores[$veiculo->id]; ?>
-                      </td>
-                    </tr>
+                    <?php if (isset($valores[$veiculo->id])): ?>
+                      <tr>
+                        <td><?php echo $veiculo->identificacao; ?></td>
+                        <td><?php echo formata_placa($veiculo->placa); ?></td>
+                        <td style="text-align: right;">
+                          <span class="pull-left">R$</span>
+                          <?php echo $valores[$veiculo->id]; ?>
+                        </td>
+                      </tr>
+                    <?php endif ?>
                   <?php endforeach ?>
                 </tbody>
               </table>

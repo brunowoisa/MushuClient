@@ -25,14 +25,7 @@
             <?php foreach ($grid as $key): ?>
               <tr>
                 <td>
-                  <div class="m-b-10 f-left">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-warning btn-transparent btn-square btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="padding: 0;"><i class="fa fa-bars"></i></button>
-                      <ul class="dropdown-menu" role="menu" style="top: 5px; left: 38px;">
-                        <li><a href="<?php echo base_url(); ?>Ferramenta/Movimentacao/editar/<?php echo $key->id; ?>">Detalhes</a></li>
-                      </ul>
-                    </div>
-                  </div>
+                  <a href="<?php echo base_url(); ?>Ferramenta/Movimentacao/editar/<?php echo $key->id; ?>" class="btn btn-success btn-transparent btn-square btn-sm"><i class="fa fa-edit"></i></a>
                 </td>
                 <td><?php echo $key->id; ?></td>
                 <td><?php echo $key->autorizado; ?></td>
